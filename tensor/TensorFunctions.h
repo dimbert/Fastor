@@ -41,7 +41,9 @@ FASTOR_INLINE Tensor<T,I,I> adjoint(const Tensor<T,I,I> &a) {
 
 template<typename T, size_t I>
 FASTOR_INLINE Tensor<T,I,I> inverse(const Tensor<T,I,I> &a) {
-    return adjoint(a)/determinant(a);
+    Tensor<T,I,I> out;
+    _inverse<T,I>(static_cast<const T *>(a.data()), out.data());
+    return out;
 }
 
 template<typename T, size_t ... Rest,
@@ -433,4 +435,3 @@ Tensor<T,Rest...> kronecker_delta() {
 }
 
 #endif // TENSOR_FUNCTIONS_H
-
