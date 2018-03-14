@@ -90,8 +90,8 @@
 
 // This changes the behaviour of all expression templates (apart from views)
 #ifdef FASTOR_COPY_EXPR
-// ALL SMART EXPRESSION TEMPLATES WITH MAKE A COPY OF UNDERLYING TENSORS 
-#define COPY_SMART_EXPR 
+// ALL SMART EXPRESSION TEMPLATES WITH MAKE A COPY OF UNDERLYING TENSORS
+#define COPY_SMART_EXPR
 #endif
 
 
@@ -110,19 +110,20 @@
 #include <emmintrin.h>
 #endif
 #ifdef __SSE4_1__
-#include <smmintrin.h> 
+#include <smmintrin.h>
 #endif
 #ifdef __AVX__
 #include <immintrin.h>
 #endif
 
-// FASTOR CONSTRUCTS
-#define Symmetric -100
+/*#define Symmetric -100
 #define NonSymmetric -101
 #define AntiSymmetric -102
 #define Identity -103
 #define One -104
-#define Zero -105
+#define Zero -105 */
+
+// FASTOR CONSTRUCTS
 #define Voigt -106
 
 #define ThreeD -150
@@ -297,4 +298,3 @@ struct PP_CAT(static_warning,__LINE__) { \
 
 
 #endif // COMMONS_H
-
